@@ -9,6 +9,17 @@ Build the following using strict Test-Driven Development:
 
 **Feature**: $ARGUMENTS
 
+## Step 0: Ensure Jest Is Set Up
+
+Before writing any tests, confirm Jest is ready:
+- Check `package.json` devDependencies for `jest` and `@jest/globals`
+- If missing, install: `npm install --save-dev jest @jest/globals`
+- Ensure there's a test script that handles ESM (required because `"type": "module"` is set):
+  ```json
+  "scripts": { "test": "node --experimental-vm-modules node_modules/.bin/jest" }
+  ```
+- Confirm it works: `npm test -- --version`
+
 ## The TDD Cycle
 
 Repeat this cycle for each behavior. Never skip steps.

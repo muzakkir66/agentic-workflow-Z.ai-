@@ -41,10 +41,11 @@ Follow this sequence — don't skip ahead to guessing:
 2. **Check `client.js`**: is the client configured correctly? Is `MODEL` exported?
 3. **Check `.env`**: are all three variables set — `Z_AI_API_KEY`, `Z_AI_BASE_URL`, `Z_AI_MODEL`?
 4. **Check the API call**: is `client.chat.completions.create()` used (not `client.messages.create()`)?
-5. **Check response access**: is `response.choices[0].message.content` used (not `response.content`)?
-6. **Form a hypothesis**: "I think [X] is wrong because [evidence]."
-7. **Verify the hypothesis**: add a targeted `console.log` that confirms or denies it.
-8. **If wrong**: go back to step 2 and trace a different path.
+5. **Check API call parameters**: does the call include `model`, `max_tokens`, and `messages`? Missing `max_tokens` can cause truncated or empty responses.
+6. **Check response access**: is `response.choices[0].message.content` used (not `response.content`)?
+7. **Form a hypothesis**: "I think [X] is wrong because [evidence]."
+8. **Verify the hypothesis**: add a targeted `console.log` that confirms or denies it.
+9. **If wrong**: go back to step 2 and trace a different path.
 
 ## Step 4: Fix
 

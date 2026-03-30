@@ -27,9 +27,10 @@ Refactor `$ARGUMENTS` safely.
 ### 4. Verify
 - `npm start` produces equivalent output to the baseline
 - `node list-models.js` still works
-- ESM imports still correct — no `require()` introduced
+- ESM imports still correct — no `require()` introduced (project uses `"type": "module"` in `package.json`)
 - `client` still imported from `./client.js` — not re-instantiated
 - `MODEL` still used from `client.js` — not hardcoded
+- `max_tokens` still present in every `client.chat.completions.create()` call
 
 ## Rules
 - If `npm start` breaks at any point, stop and undo — don't continue

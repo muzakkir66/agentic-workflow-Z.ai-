@@ -25,11 +25,12 @@ Input → [Step A] → [Step B] → Output
 
 For Z.ai API calls, use this as a guide:
 ```
-.env (Z_AI_API_KEY, Z_AI_MODEL)
+.env (Z_AI_API_KEY, Z_AI_BASE_URL, Z_AI_MODEL)
       ↓
-  client.js  (OpenAI client, baseURL → Z.ai)
+  client.js  (OpenAI client, baseURL → Z.ai, exports MODEL)
       ↓
-  your script (messages array)
+  your script
+    { model: MODEL, max_tokens: 1024, messages: [...] }
       ↓
   Z.ai API  (POST /chat/completions)
       ↓

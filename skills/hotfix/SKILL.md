@@ -47,6 +47,7 @@ Emergency Z.ai integration fix. Speed matters — make the smallest correct chan
 ## Step 4: Verify With Live Z.ai Call
 
 - Run `npm start` — must return a real Z.ai response with no error
+- Run `npm run stream` — must stream tokens to stdout without error
 - Run `node list-models.js` — must list available models
 - **ASK the user** if they want any additional verification
 

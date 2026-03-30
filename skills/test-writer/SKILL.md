@@ -5,6 +5,17 @@ description: Write comprehensive tests for new or changed Z.ai Node.js code. Tri
 
 Write comprehensive tests for the code that was just added or changed.
 
+## Step 0: Ensure Jest Is Set Up
+
+Check if Jest is already installed:
+- Look for `jest` or `@jest/globals` in `package.json` devDependencies
+- If missing, install: `npm install --save-dev jest @jest/globals`
+- Add a test script to `package.json` if not present:
+  ```json
+  "scripts": { "test": "node --experimental-vm-modules node_modules/.bin/jest" }
+  ```
+  This is required because the project uses ESM (`"type": "module"` in `package.json`).
+
 ## Step 1: Discover What Changed
 
 - Check `git diff` and `git diff --cached` to identify new/modified scripts
